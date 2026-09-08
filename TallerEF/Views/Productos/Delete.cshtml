@@ -1,0 +1,18 @@
+﻿@model TallerEF.Models.Producto
+
+<h2 class="my-3">Eliminar Producto</h2>
+<h4 class="text-danger">¿Está seguro de eliminar este producto?</h4>
+
+<div class="card p-3 my-3">
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Descripción:</strong> @Model.Descripcion</p>
+    <p><strong>Precio:</strong> S/ @Model.Precio</p>
+    <p><strong>Stock:</strong> @Model.Stock</p>
+    <p><strong>Categoría:</strong> @Model.Categoria</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="IdProducto" />
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
